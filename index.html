@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Para ti 🎄</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Una sorpresa de Navidad hecha con cariño (y código)."
+    />
+  </head>
+
+  <body>
+    <canvas id="snow"></canvas>
+
+    <main class="wrap">
+      <header class="hero">
+        <div class="badge">🎄 Especial Navidad</div>
+        <h1><span id="herName">YARA</span></h1>
+        <p class="subtitle">
+          Te hice esto con cariño y con código. Porque quiero todo contigo
+        </p>
+
+        <div class="countdown" aria-label="Cuenta atrás">
+          <div class="cd-item"><span id="d">00</span><small>Días</small></div>
+          <div class="cd-item"><span id="h">00</span><small>Horas</small></div>
+          <div class="cd-item"><span id="m">00</span><small>Min</small></div>
+          <div class="cd-item"><span id="s">00</span><small>Seg</small></div>
+        </div>
+
+        <div class="cta">
+          <button class="btn primary" id="openLetter">Abrir mi carta 💌</button>
+        </div>
+
+        <p class="muted small tip">
+          (En móvil: toca la carta para “enfocar” la foto 😉)
+        </p>
+      </header>
+
+      <section class="card letter" id="letter" hidden>
+        <div class="envelope">
+          <div class="envelope-top"></div>
+          <div class="paper">
+            <h2>Carta de un corazón ilusionado</h2>
+            <p id="letterText">
+              <strong>Yara</strong>,<br /><br />
+              No te escribo esto por impulso, ni por costumbre, ni porque sea
+              Navidad. Te lo escribo porque contigo todo tiene sentido cuando se
+              hace despacio y de verdad. No quiero promesas vacías ni prisas.
+              Quiero tiempo, momentos, risas, silencios cómodos y planes
+              sencillos. Quiero compartir, cuidar y construir algo real, paso a
+              paso. Esto no es presión. Es una invitación honesta. Y si algún
+              día dudas, recuerda esto:<br />
+              Quiero me des todo lo que me puedas ofrecer y yo te daré todo lo
+              que pueda ofrecerte.
+            </p>
+
+            <div class="mini">
+              <div class="mini-title">Modo programador:</div>
+              <code id="devLine">if (contigo) { felicidad++; }</code>
+            </div>
+
+            <div class="question">
+              <h3>¿Quieres que hagamos algo juntos?</h3>
+              <div class="q-buttons">
+                <button class="btn primary" id="yesBtn">Sí ✅</button>
+                <button class="btn danger" id="noBtn">No 🙈</button>
+              </div>
+              <p class="hint" id="hint"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Pequeños “recuerdos”</h2>
+        <p class="muted">Pon aquí 3-6 fotos o cosas que os representen.</p>
+
+        <div class="gallery">
+          <figure class="tile">
+            <img src="assets/img1.jpg" alt="Recuerdo 1" />
+            <figcaption>Tu risa me reinicia el día.</figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="assets/img2.jpg" alt="Recuerdo 2" />
+            <figcaption>Contigo, el mundo baja el ruido.</figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="assets/img3.jpg" alt="Recuerdo 3" />
+            <figcaption>Me gustas en todos los “formatos”.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="card final" id="final" hidden>
+        <h2>🎁 Plan desbloqueado</h2>
+        <p>Vale. Entonces… elige tu plan:</p>
+        <ul class="list">
+          <li>☕ Chocolatada + paseo</li>
+          <li>🍿 Peli + manta</li>
+          <li>🍽️ Cena tranquila</li>
+        </ul>
+
+        <div class="cta">
+          <a class="btn primary" id="whatsBtn" target="_blank" rel="noopener"
+            >Decírmelo por WhatsApp</a
+          >
+          <button class="btn ghost" id="confettiBtn">Más confeti ✨</button>
+        </div>
+
+        <p class="muted small">Hecho por mí, pensando en ti. 🎄</p>
+      </section>
+
+      <footer class="footer">
+        <span>🎅 Hecho con ❤️ y JavaScript</span>
+      </footer>
+    </main>
+
+    <div id="reveal" class="reveal-hidden">
+      <div class="reveal-overlay"></div>
+      <img src="assets/yara.jpeg" alt="Yara" />
+      <div class="reveal-text">
+        <h1>YARA</h1>
+        <p>Justo antes de Navidad, quería que supieras esto.</p>
+        <button class="btn primary" id="revealClose">Continuar</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
