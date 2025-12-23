@@ -9,7 +9,7 @@ const CONFIG = {
 };
 // ============================
 
-const FORCE_REVEAL = true; 
+const FORCE_REVEAL = false; 
 
 const $ = (id) => document.getElementById(id);
 
