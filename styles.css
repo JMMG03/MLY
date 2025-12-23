@@ -274,13 +274,17 @@ code{
 }
 
 .reveal-text{
-  position:relative;
+  position:absolute;
+  top: 12%;              
+  left: 50%;
+  transform: translateX(-50%);
   text-align:center;
   color:white;
   z-index:2;
   padding:20px;
   max-width: 520px;
 }
+
 
 @keyframes zoomIn{
   from{ transform: scale(1); }
