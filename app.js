@@ -202,3 +202,65 @@ $("revealClose").addEventListener("click", () => {
 
 setInterval(checkReveal, 500);
 checkReveal();
+
+document.querySelectorAll(".video-tile").forEach(tile => {
+  const btn = tile.querySelector(".play");
+  const v = tile.querySelector("video");
+
+  const start = async () => {
+    // pausa otros vídeos
+    document.querySelectorAll(".vrec").forEach(o => { if(o !== v) o.pause(); });
+
+    try{
+      await v.play();
+      tile.classList.add("playing");
+    }catch(e){
+      // Fallback: si el navegador bloquea reproducción, mostramos controles
+      v.controls = true;
+      btn.style.display = "none";
+    }
+  };
+
+  btn.addEventListener("click", start);
+  v.addEventListener("click", () => { if(v.paused) start(); else v.pause(); });
+
+  v.addEventListener("pause", () => tile.classList.remove("playing"));
+  v.addEventListener("ended", () => tile.classList.remove("playing"));
+});
+
+const modal = document.getElementById("mediaModal");
+const modalContent = modal.querySelector(".media-content");
+const backdrop = modal.querySelector(".media-backdrop");
+
+// abrir zoom
+document.querySelectorAll(".tile img, .tile video").forEach(el => {
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    modalContent.innerHTML = ""; // limpiar
+
+    let clone;
+    if(el.tagName === "VIDEO"){
+      clone = el.cloneNode(true);
+      clone.controls = true;
+      clone.muted = false;
+      clone.play().catch(()=>{});
+    }else{
+      clone = el.cloneNode(true);
+    }
+
+    modalContent.appendChild(clone);
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+// cerrar zoom
+backdrop.addEventListener("click", closeModal);
+modal.addEventListener("click", closeModal);
+
+function closeModal(){
+  modal.classList.add("hidden");
+  modalContent.innerHTML = "";
+  document.body.style.overflow = "";
+}

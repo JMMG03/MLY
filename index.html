@@ -14,6 +14,11 @@
     />
   </head>
 
+  <div id="mediaModal" class="media-modal hidden">
+    <div class="media-backdrop"></div>
+    <div class="media-content"></div>
+  </div>
+
   <body>
     <canvas id="snow"></canvas>
 
@@ -22,7 +27,7 @@
         <div class="badge">🎄 Especial Navidad</div>
         <h1><span id="herName">YARA</span></h1>
         <p class="subtitle">
-          Te hice esto con cariño y con código. Porque quiero todo contigo
+          Te hice esto con cariño y con código. Porque quiero todo contigo.
         </p>
 
         <div class="countdown" aria-label="Cuenta atrás">
@@ -78,20 +83,49 @@
 
       <section class="card">
         <h2>Pequeños “recuerdos”</h2>
-        <p class="muted">Pon aquí 3-6 fotos o cosas que os representen.</p>
 
         <div class="gallery">
           <figure class="tile">
-            <img src="assets/img1.jpg" alt="Recuerdo 1" />
-            <figcaption>Tu risa me reinicia el día.</figcaption>
+            <img src="assets/v4y.jpeg" alt="Recuerdo 1" />
+            <figcaption>Este día, para mí el más esperado.</figcaption>
           </figure>
-          <figure class="tile">
-            <img src="assets/img2.jpg" alt="Recuerdo 2" />
-            <figcaption>Contigo, el mundo baja el ruido.</figcaption>
+          <figure class="tile video-tile">
+            <button class="play" type="button" aria-label="Reproducir vídeo">
+              ▶
+            </button>
+            <video
+              class="vrec"
+              src="assets/v1y.mp4"
+              playsinline
+              preload="metadata"
+            ></video>
+            <figcaption>Graciosa.</figcaption>
           </figure>
-          <figure class="tile">
-            <img src="assets/img3.jpg" alt="Recuerdo 3" />
-            <figcaption>Me gustas en todos los “formatos”.</figcaption>
+
+          <figure class="tile video-tile">
+            <button class="play" type="button" aria-label="Reproducir vídeo">
+              ▶
+            </button>
+            <video
+              class="vrec"
+              src="assets/v3y.mp4"
+              playsinline
+              preload="metadata"
+            ></video>
+            <figcaption>Linda y tierna.</figcaption>
+          </figure>
+
+          <figure class="tile video-tile">
+            <button class="play" type="button" aria-label="Reproducir vídeo">
+              ▶
+            </button>
+            <video
+              class="vrec"
+              src="assets/v2y.mp4"
+              playsinline
+              preload="metadata"
+            ></video>
+            <figcaption>Gritito.</figcaption>
           </figure>
         </div>
       </section>
